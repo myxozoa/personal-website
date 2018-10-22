@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './App.module.css';
 
+import Waves from '../Waves';
+
 class App extends React.Component {
   render() {
     return (
@@ -14,6 +16,8 @@ class App extends React.Component {
             <div>Contact</div>
           </nav>
         </header>
+
+        <Waves width="100" height="100" separation="50" amountX="120" amountY="30" />
       </div>
     );
   }
