@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Landing.module.css';
 
-import Waves from '../Waves';
+import Waves from '../../Waves';
 
 class Landing extends React.Component {
   render() {

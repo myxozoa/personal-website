@@ -4,8 +4,14 @@
 */
 
 html, body, #root {
+  font-family: din-2014;
+  letter-spacing: 2px;
   height: 100%;
   pointer-events: none;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html,
@@ -132,4 +138,9 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/* hack because reach router renders a div that breaks flexbox */
+div[role="group"][tabindex] {
+  flex: 1;
 }

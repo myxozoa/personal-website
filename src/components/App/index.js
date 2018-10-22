@@ -4,7 +4,8 @@ import { Router } from '@reach/router';
 import styles from './App.module.css';
 
 import Navigation from '../Navigation';
-import Landing from '../Landing';
+import Landing from '../Pages/Landing';
+import NotFound from '../Pages/NotFound';
 
 class App extends React.Component {
   render() {
@@ -18,6 +19,8 @@ class App extends React.Component {
 
         <Router>
           <Landing path="/" />
+          {/* Contact */}
+          <NotFound default />
         </Router>
       </div>
     );
