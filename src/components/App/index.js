@@ -13,7 +13,15 @@ class App extends React.Component {
     return (
       <div className={styles.app}>
         <header className={styles.header}>
-          <h1 className={styles.name}>Ronnie Miksch</h1>
+          <h1 className={styles.name}>
+            <div>Ronnie</div>
+            <div className={styles.lastName}>
+              <span>Miksch</span>
+              <div className={styles.periodContainer}>
+                <div className={styles.period} />
+              </div>
+            </div>
+          </h1>
 
           <Navigation />
         </header>
