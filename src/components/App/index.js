@@ -16,11 +16,15 @@ class App extends React.Component {
       <div className={styles.app}>
         <header className={styles.header}>
           <h1 className={styles.name}>
-            <div className="glitch" data-text="Ronnie" style={{ '--offset': `${Math.random() * 3}s` }}>Ronnie</div>
+            <div className="glitch" data-text="Ronnie" style={{ '--offset': `${Math.random() * 3}s` }}>
+              Ronnie
+            </div>
             <div className={styles.lastName}>
-              <span className="glitch" data-text="Miksch" style={{ '--offset': `${Math.random() * 3}s` }}>Miksch</span>
+              <span className="glitch" data-text="Miksch" style={{ '--offset': `${Math.random() * 3}s` }}>
+                Miksch
+              </span>
               <div className={styles.periodContainer}>
-                <div className={styles.period} />
+                <div className={[styles.period, 'glitch'].join(' ')} data-text="." style={{ '--offset': `${Math.random() * 3}s` }}/>
               </div>
             </div>
           </h1>

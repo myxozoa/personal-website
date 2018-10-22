@@ -9,7 +9,6 @@ body,
   font-family: din-2014;
   letter-spacing: 2px;
   height: 100%;
-  pointer-events: none;
 }
 
 * {
