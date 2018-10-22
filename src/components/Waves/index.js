@@ -42,7 +42,7 @@ class Wave extends React.Component {
   }
 
   onMouseMove = event => {
-    console.log('what the fuck');
+    this.hover = true;
     this.mouseX = -(event.clientX - this.width / 2) / 2;
     this.mouseY = -(event.clientY - this.height / 2) * 2;
   };
@@ -53,7 +53,6 @@ class Wave extends React.Component {
     this.width = this.container.current.clientWidth;
     this.height = this.container.current.clientHeight;
 
-    console.log('before', this);
 
     this.sizeMultiplier = 1 + this.height / 450;
 
@@ -130,17 +129,19 @@ class Wave extends React.Component {
     }
 
     window.addEventListener('resize', this.onWindowResize, false);
-    this.container.current.addEventListener('mouseenter', () => {
+    document.addEventListener('mouseenter', () => {
+      console.log('hovered??');
       this.hover = true;
     });
-    this.container.current.addEventListener('mouseout', () => {
+    document.addEventListener('mouseout', () => {
       this.hover = false;
     });
-    this.container.current.addEventListener('mousedown', () => {
+    document.addEventListener('mousedown', () => {
       this.jump = 1;
     });
 
-    console.log('after', this);
+    document.addEventListener('mousemove', this.onMouseMove);
+
 
   };
 
@@ -218,7 +219,7 @@ class Wave extends React.Component {
 
   render() {
     return (
-      <div className={styles.container} onMouseMove={this.onMouseMove}>
+      <div className={styles.container}>
         <div className={styles.root} ref={this.container} />
       </div>
     )
