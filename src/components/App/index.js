@@ -30,6 +30,7 @@ class App extends React.Component {
     super(props);
 
     this.header = React.createRef();
+    this.content = React.createRef();
     this.bounds = null;
   }
 
@@ -39,18 +40,18 @@ class App extends React.Component {
 
   mouseEnter = () => {
     anime.remove(this.header.current);
+    anime.remove(this.content.current);
   };
 
   mouseMove = event => {
-    console.log(this.bounds);
     const mousePos = getMousePos(event);
     const docScrolls = { left: document.body.scrollLeft + document.documentElement.scrollLeft, top: document.body.scrollTop + document.documentElement.scrollTop };
     const relMousePos = { x: mousePos.x - this.bounds.left - docScrolls.left, y: mousePos.y - this.bounds.top - docScrolls.top };
 
 
     const config = {
-      translation: { x: [-5, 5], y: [-5, 5], z: [0, 0] },
-      rotation: { x: [5, -5], y: [-5, 5], z: [0, 0] },
+      translation: { x: [5, -5], y: [5, -5], z: [0, 0] },
+      rotation: { x: [2, -2], y: [-2, 2], z: [0, 0] },
       // rotation: { x: [0, 0], y: [0, 0], z: [0, 0] }
     };
 
@@ -66,15 +67,16 @@ class App extends React.Component {
         z: (config.rotation.z[1] - config.rotation.z[0]) / this.bounds.width * relMousePos.x + config.rotation.z[0],
       },
     };
-    // for(let test in transforms.rotation) {
-    //   if (transforms.rotation[test] > 15) {
-    //     transforms.rotation[test] = 15;
-    //   } else if (transforms.rotation[test] < -15) {
-    //     transforms.rotation[test] = -15;
-    //   }
-    // }
 
-    this.header.current.style.WebkitTransform =
+    for(let test in transforms.rotation) {
+      if (transforms.rotation[test] > 5) {
+        transforms.rotation[test] = 5;
+      } else if (transforms.rotation[test] < -5) {
+        transforms.rotation[test] = -5;
+      }
+    }
+
+    const transform =
       'translateX(' +
       transforms.translation.x +
       'px) translateY(' +
@@ -88,11 +90,30 @@ class App extends React.Component {
       'deg) rotateZ(' +
       transforms.rotation.z +
       'deg)';
+
+      this.header.current.style.WebkitTransform = transform;
+      this.content.current.style.WebkitTransform = transform;
   };
 
   mouseLeave = event => {
     anime({
       targets: this.header.current,
+      duration: 1200,
+      easing: 'easeOutElastic',
+      elasticity: 600,
+      scaleX: 1,
+      scaleY: 1,
+      scaleZ: 1,
+      translateX: 0,
+      translateY: 0,
+      translateZ: 0,
+      rotateX: 0,
+      rotateY: 0,
+      rotateZ: 0,
+    });
+
+    anime({
+      targets: this.content.current,
       duration: 1200,
       easing: 'easeOutElastic',
       elasticity: 600,
@@ -129,12 +150,14 @@ class App extends React.Component {
           <Navigation />
         </header>
 
-        <Router>
-          <Landing path="/" />
-          <Projects path="/projects" />
-          {/* Contact */}
-          <NotFound default />
-        </Router>
+        <div className={styles.content} ref={this.content}>
+          <Router>
+            <Landing path="/" />
+            <Projects path="/projects" />
+            {/* Contact */}
+            <NotFound default />
+          </Router>
+        </div>
 
         <Waves width="100" height="100" separation="50" amountX="120" amountY="30" />
       </div>
