@@ -16,7 +16,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100px;
+  height: 120px;
+  width: 180px;
   font-size: 3rem;
   font-weight: 500;
   padding: 5px;
@@ -31,7 +32,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1px;
+  padding: 7px 3px;
 }
 
 .period {

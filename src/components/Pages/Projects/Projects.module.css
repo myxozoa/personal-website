@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100%;
+  user-select: none;
+  padding-bottom: 20%;
+  font-size: 2rem;
+}
+
+.project {
+  height: 200px;
+  width: 200px;
+  font-size: 1rem;
+  font-weight: 300;
+  border: 1px solid white;
+  padding: 10px;
+}
