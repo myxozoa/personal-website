@@ -11,3 +11,8 @@
   letter-spacing: 1.5px;
   color: hsl(0, 0%, 98%);
 }
+
+.name {
+  font-size: 3rem;
+  font-weight: 500;
+}

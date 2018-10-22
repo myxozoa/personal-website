@@ -5,7 +5,7 @@ class Landing extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        <h2>Not Found</h2>
+        <h2 className="glitch" data-text="Not_Found">Not Found</h2>
       </div>
     );
   }

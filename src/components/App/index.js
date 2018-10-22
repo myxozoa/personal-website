@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <div className={styles.app}>
         <header className={styles.header}>
-          <span>Ronnie Miksch</span>
+          <h1 className={styles.name}>Ronnie Miksch</h1>
 
           <Navigation />
         </header>
