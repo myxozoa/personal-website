@@ -2,11 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   color: white;
   height: 100%;
   user-select: none;
   padding-bottom: 20%;
   font-size: 2rem;
+}
+
+.title {
+  margin-bottom: 50px;
 }
 
 .project {
@@ -28,4 +33,13 @@
 
 .projectDesc {
   font-size: 1rem;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 50%;
 }
