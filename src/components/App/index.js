@@ -1,8 +1,10 @@
 import React from 'react';
+import { Router } from '@reach/router';
+
 import styles from './App.module.css';
 
-import Waves from '../Waves';
 import Navigation from '../Navigation';
+import Landing from '../Landing';
 
 class App extends React.Component {
   render() {
@@ -14,7 +16,9 @@ class App extends React.Component {
           <Navigation />
         </header>
 
-        <Waves width="100" height="100" separation="50" amountX="120" amountY="30" />
+        <Router>
+          <Landing path="/" />
+        </Router>
       </div>
     );
   }
