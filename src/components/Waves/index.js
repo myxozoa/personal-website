@@ -125,7 +125,8 @@ class Wave extends React.Component {
 
     if (this.debug) {
       this.stats = new Stats();
-      this.container.current.appendChild(this.stats.domElement);
+      // Figure out cleaner way to do this
+      this.container.current.parentElement.parentElement.appendChild(this.stats.domElement);
     }
 
     window.addEventListener('resize', this.onWindowResize, false);
