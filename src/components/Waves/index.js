@@ -63,7 +63,7 @@ class Wave extends React.Component {
     this.originalCameraPos = {
       x: this.camera.position.x,
       y: 500 + this.height * 2,
-      z: 2000 + this.height * 3,
+      z: 2000 + (this.height + this.width),
     };
 
     this.camera.position.set(this.originalCameraPos.x, this.originalCameraPos.y, this.originalCameraPos.z);
@@ -154,7 +154,7 @@ class Wave extends React.Component {
     let cameraPos = {
       x: this.camera.position.x,
       y: 500 + this.height * 2,
-      z: 2000 + this.height * 3,
+      z: 2000 + (this.height + this.width),
     };
 
     this.sizeMultiplier = 1 + this.height / 450;
