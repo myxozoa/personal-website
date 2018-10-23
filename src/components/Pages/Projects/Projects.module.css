@@ -21,10 +21,14 @@
   font-weight: 300;
   border: 1px solid white;
   padding: 10px;
+  transition: transform 0.2s ease-in-out;
+  margin: 10px;
 }
 
 .project:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
 }
 
 .projectName {
