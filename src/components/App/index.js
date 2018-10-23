@@ -9,6 +9,7 @@ import Waves from '../Waves';
 
 import Landing from '../Pages/Landing';
 import Projects from '../Pages/Projects';
+import Contact from '../Pages/Contact';
 import NotFound from '../Pages/NotFound';
 
 function getMousePos(e) {
@@ -36,6 +37,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.bounds = document.body.getBoundingClientRect();
+
+    window.addEventListener('resize', () => this.bounds = document.body.getBoundingClientRect());
   }
 
   mouseEnter = () => {
@@ -62,7 +65,7 @@ class App extends React.Component {
       },
       rotation: {
         x: ((config.rotation.x[1] - config.rotation.x[0]) / this.bounds.height) * relMousePos.y + config.rotation.x[0],
-        y: ((config.rotation.y[1] - config.rotation.y[0]) / this.bounds.height) * relMousePos.x + config.rotation.y[0],
+        y: ((config.rotation.y[1] - config.rotation.y[0]) / this.bounds.width) * relMousePos.x + config.rotation.y[0],
         z: ((config.rotation.z[1] - config.rotation.z[0]) / this.bounds.width) * relMousePos.x + config.rotation.z[0],
       },
     };
@@ -153,7 +156,7 @@ class App extends React.Component {
           <Router>
             <Landing path="/" />
             <Projects path="/projects" />
-            {/* Contact */}
+            <Contact path="/contact" />
             <NotFound default />
           </Router>
         </div>
