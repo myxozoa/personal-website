@@ -1,14 +1,321 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+#root {
+  font-family: din-2014;
+  letter-spacing: 2px;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* hack because reach router renders a div that breaks flexbox */
+div[role='group'][tabindex] {
+  flex: 1;
+}
+
+.navLink, a {
+  color: hsl(0, 0%, 97%);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.navLink:hover {
+  transform: translateX(5px);
+  transition: all 0.2s ease-in-out;
+}
+
+.glitch {
+  color: white;
+  position: relative;
+}
+
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  color: white;
+  background: hsl(0, 0%, 2%);
+  overflow: hidden;
+  text-shadow: 3px 2px rgba(255,9,0,1);
+  opacity: 0.5;
+
+  animation-name: glitch-anim-2;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-delay: var(--offset);
+}
+
+.glitch:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 1px;
+  color: white;
+  text-shadow: 1px 3px rgba(0,51,255,1);
+  background: hsl(0, 0%, 2%);
+  overflow: hidden;
+
+  animation-name: glitch-anim-1;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-delay: var(--offset);
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, calc(-1 * 2px), 0) scale3d(-1, -1, 1);
+    clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+  }
+  1.5% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+  }
+  2% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+  }
+  2.5% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+  }
+  3% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+  }
+  5% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+  }
+  5.5% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+  }
+  7% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+  }
+  8% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+  }
+  9% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+  }
+  10.5% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+  }
+  11% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+  }
+  13% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+  }
+  14% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+  }
+  14.5% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+  }
+  15% {
+    clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+  }
+  16% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+  }
+  18% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+  }
+  20% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+  }
+  21.9% {
+    opacity: 1;
+    transform: translate3d(0, calc(-1 * 2px), 0) scale3d(-1, -1, 1);
+  }
+  22%,
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    opacity: 1;
+    transform: translate3d(5px, 0, 0);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+  }
+  2% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  4% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+  6% {
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+  }
+  8% {
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+  10% {
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+  }
+  12% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+  }
+  14% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+  }
+  16% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+  }
+  18% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+  }
+  20% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+  21.9% {
+    opacity: 1;
+    transform: translate3d(5px, 0, 0);
+  }
+  22%,
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
 }

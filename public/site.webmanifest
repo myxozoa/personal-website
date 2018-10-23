@@ -1,0 +1,14 @@
+{
+    "name": "Ronnie Miksch",
+    "short_name": "Ronnie Miksch",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png?v=WGonwQd7Gy",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#fcfcfc",
+    "background_color": "#fcfcfc",
+    "display": "standalone"
+}
