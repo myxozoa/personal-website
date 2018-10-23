@@ -62,7 +62,7 @@ class App extends React.Component {
       },
       rotation: {
         x: ((config.rotation.x[1] - config.rotation.x[0]) / this.bounds.height) * relMousePos.y + config.rotation.x[0],
-        y: ((config.rotation.y[1] - config.rotation.y[0]) / this.bounds.height) * relMousePos.x + config.rotation.y[0],
+        y: ((config.rotation.y[1] - config.rotation.y[0]) / this.bounds.width) * relMousePos.x + config.rotation.y[0],
         z: ((config.rotation.z[1] - config.rotation.z[0]) / this.bounds.width) * relMousePos.x + config.rotation.z[0],
       },
     };
