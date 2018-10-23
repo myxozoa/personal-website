@@ -9,6 +9,7 @@ import Waves from '../Waves';
 
 import Landing from '../Pages/Landing';
 import Projects from '../Pages/Projects';
+import Contact from '../Pages/Contact';
 import NotFound from '../Pages/NotFound';
 
 function getMousePos(e) {
@@ -153,7 +154,7 @@ class App extends React.Component {
           <Router>
             <Landing path="/" />
             <Projects path="/projects" />
-            {/* Contact */}
+            <Contact path="/contact" />
             <NotFound default />
           </Router>
         </div>

@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100%;
+  user-select: none;
+  padding-bottom: 20%;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px 50px;
+  border: 1px solid white;
+  height: 50%;
+}
