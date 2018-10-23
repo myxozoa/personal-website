@@ -93,6 +93,7 @@ class App extends React.Component {
 
       this.header.current.style.WebkitTransform = transform;
       this.content.current.style.WebkitTransform = transform;
+
   };
 
   mouseLeave = event => {
