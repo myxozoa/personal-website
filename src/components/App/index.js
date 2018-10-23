@@ -4,8 +4,8 @@ import anime from 'animejs';
 
 import styles from './App.module.css';
 
-import Navigation from '../Navigation';
 import Waves from '../Waves';
+import Header from '../Header';
 
 import Landing from '../Pages/Landing';
 import Projects from '../Pages/Projects';
@@ -135,21 +135,7 @@ class App extends React.Component {
     return (
       <div className={styles.app} onMouseMove={this.mouseMove} onMouseLeave={this.mouseLeave} onMouseEnter={this.mouseEnter}>
         <header ref={this.header} className={styles.header}>
-          <h1 className={styles.name}>
-            <div className="glitch" data-text="Ronnie" style={{ '--offset': `${Math.random() * 3}s` }}>
-              Ronnie
-            </div>
-            <div className={styles.lastName}>
-              <span className="glitch" data-text="Miksch" style={{ '--offset': `${Math.random() * 3}s` }}>
-                Miksch
-              </span>
-              <div className={styles.periodContainer}>
-                <div className={[styles.period, 'glitch'].join(' ')} data-text="." style={{ '--offset': `${Math.random() * 3}s` }} />
-              </div>
-            </div>
-          </h1>
-
-          <Navigation />
+          <Header />
         </header>
 
         <div className={styles.content} ref={this.content}>
