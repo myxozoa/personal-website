@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { seconds } from '../../helpers/uniqueOffset';
+
 import styles from './Header.module.css';
 
 import Navigation from '../Navigation';
@@ -9,15 +11,15 @@ class Header extends React.Component {
     return (
       <React.Fragment>
         <h1 className={styles.name}>
-          <div className="glitch" data-text="Ronnie" style={{ '--offset': `${Math.random() * 3}s` }}>
+          <div className="glitch" data-text="Ronnie" style={{ '--offset': seconds() }}>
             Ronnie
           </div>
           <div className={styles.lastName}>
-            <span className="glitch" data-text="Miksch" style={{ '--offset': `${Math.random() * 3}s` }}>
+            <span className="glitch" data-text="Miksch" style={{ '--offset': seconds() }}>
               Miksch
             </span>
             <div className={styles.periodContainer}>
-              <div className={[styles.period, 'glitch'].join(' ')} data-text="." style={{ '--offset': `${Math.random() * 3}s` }} />
+              <div className={[styles.period, 'glitch'].join(' ')} data-text="." style={{ '--offset': seconds() }} />
             </div>
           </div>
         </h1>

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> renders correctly 1`] = `
+<div
+  className="container"
+>
+  <h2
+    className="glitch"
+    data-text="Not_Found"
+  >
+    Not Found
+  </h2>
+</div>
+`;

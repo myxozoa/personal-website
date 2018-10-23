@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders correctly 1`] = `
+<Fragment>
+  <h1
+    className="name"
+  >
+    <div
+      className="glitch"
+      data-text="Ronnie"
+      style={
+        Object {
+          "--offset": "1.5s",
+        }
+      }
+    >
+      Ronnie
+    </div>
+    <div
+      className="lastName"
+    >
+      <span
+        className="glitch"
+        data-text="Miksch"
+        style={
+          Object {
+            "--offset": "1.5s",
+          }
+        }
+      >
+        Miksch
+      </span>
+      <div
+        className="periodContainer"
+      >
+        <div
+          className="period glitch"
+          data-text="."
+          style={
+            Object {
+              "--offset": "1.5s",
+            }
+          }
+        />
+      </div>
+    </div>
+  </h1>
+  <Navigation />
+</Fragment>
+`;

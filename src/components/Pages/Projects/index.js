@@ -12,7 +12,7 @@ class Projects extends React.Component {
         <section className={styles.projects}>
         {
           projects.map(project => (
-            <a href={project.url} className={styles.link}>
+            <a key={project.id} href={project.url} className={styles.link}>
               <div className={styles.project}>
                 <div className={styles.projectName}>{project.title}</div>
                 <div className={styles.projectDesc}>{project.description}</div>

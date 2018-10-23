@@ -38,7 +38,7 @@ class App extends React.Component {
   componentDidMount() {
     this.bounds = document.body.getBoundingClientRect();
 
-    window.addEventListener('resize', () => this.bounds = document.body.getBoundingClientRect());
+    window.addEventListener('resize', () => (this.bounds = document.body.getBoundingClientRect()));
   }
 
   mouseEnter = () => {
@@ -132,7 +132,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.app} onMouseMove={this.mouseMove} onMouseLeave={this.mouseLeave} onMouseEnter={this.mouseEnter}>
+      <div
+        className={styles.app}
+        onMouseMove={this.mouseMove}
+        onMouseLeave={this.mouseLeave}
+        onMouseEnter={this.mouseEnter}
+      >
         <header ref={this.header} className={styles.header}>
           <Header />
         </header>

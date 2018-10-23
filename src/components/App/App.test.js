@@ -1,13 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Waves from '../Waves';
-import App from './index';
+import Component from './index';
 
 describe('<App />', () => {
-  it('renders the Waves component', () => {
-    const app = shallow(<App />);
+  it('renders correctly', () => {
+    const component = shallow(<Component />);
 
-    expect(app.find(Waves)).toHaveLength(1);
+    expect(component).toMatchSnapshot();
   });
 });
