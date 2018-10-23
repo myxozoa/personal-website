@@ -48,7 +48,6 @@ class App extends React.Component {
     const docScrolls = { left: document.body.scrollLeft + document.documentElement.scrollLeft, top: document.body.scrollTop + document.documentElement.scrollTop };
     const relMousePos = { x: mousePos.x - this.bounds.left - docScrolls.left, y: mousePos.y - this.bounds.top - docScrolls.top };
 
-
     const config = {
       translation: { x: [5, -5], y: [5, -5], z: [0, 0] },
       rotation: { x: [2, -2], y: [-2, 2], z: [0, 0] },
@@ -57,18 +56,18 @@ class App extends React.Component {
 
     const transforms = {
       translation: {
-        x: (config.translation.x[1] - config.translation.x[0]) / this.bounds.width * relMousePos.x + config.translation.x[0],
-        y: (config.translation.y[1] - config.translation.y[0]) / this.bounds.height * relMousePos.y + config.translation.y[0],
-        z: (config.translation.z[1] - config.translation.z[0]) / this.bounds.height * relMousePos.y + config.translation.z[0],
+        x: ((config.translation.x[1] - config.translation.x[0]) / this.bounds.width) * relMousePos.x + config.translation.x[0],
+        y: ((config.translation.y[1] - config.translation.y[0]) / this.bounds.height) * relMousePos.y + config.translation.y[0],
+        z: ((config.translation.z[1] - config.translation.z[0]) / this.bounds.height) * relMousePos.y + config.translation.z[0],
       },
       rotation: {
-        x: (config.rotation.x[1] - config.rotation.x[0]) / this.bounds.height * relMousePos.y + config.rotation.x[0],
-        y: (config.rotation.y[1] - config.rotation.y[0]) / this.bounds.height * relMousePos.x + config.rotation.y[0],
-        z: (config.rotation.z[1] - config.rotation.z[0]) / this.bounds.width * relMousePos.x + config.rotation.z[0],
+        x: ((config.rotation.x[1] - config.rotation.x[0]) / this.bounds.height) * relMousePos.y + config.rotation.x[0],
+        y: ((config.rotation.y[1] - config.rotation.y[0]) / this.bounds.height) * relMousePos.x + config.rotation.y[0],
+        z: ((config.rotation.z[1] - config.rotation.z[0]) / this.bounds.width) * relMousePos.x + config.rotation.z[0],
       },
     };
 
-    for(let test in transforms.rotation) {
+    for (let test in transforms.rotation) {
       if (transforms.rotation[test] > 5) {
         transforms.rotation[test] = 5;
       } else if (transforms.rotation[test] < -5) {
@@ -91,9 +90,8 @@ class App extends React.Component {
       transforms.rotation.z +
       'deg)';
 
-      this.header.current.style.WebkitTransform = transform;
-      this.content.current.style.WebkitTransform = transform;
-
+    this.header.current.style.WebkitTransform = transform;
+    this.content.current.style.WebkitTransform = transform;
   };
 
   mouseLeave = event => {
