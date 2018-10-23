@@ -14,7 +14,7 @@ import NotFound from '../Pages/NotFound';
 function getMousePos(e) {
   var posx = 0,
     posy = 0;
-  if (!e) var e = window.event;
+  // if (!e) var e = window.event;
   if (e.pageX || e.pageY) {
     posx = e.pageX;
     posy = e.pageY;
