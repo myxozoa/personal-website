@@ -37,6 +37,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.bounds = document.body.getBoundingClientRect();
+
+    window.addEventListener('resize', () => this.bounds = document.body.getBoundingClientRect());
   }
 
   mouseEnter = () => {
