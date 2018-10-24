@@ -26,6 +26,7 @@ class Wave extends React.Component {
     this.hover = false;
     this.jump = 0;
 
+    this.clock = null;
     this.geometry = null;
     this.particleSystem = null;
     this.camera = null;
@@ -69,6 +70,10 @@ class Wave extends React.Component {
     this.camera.position.set(this.originalCameraPos.x, this.originalCameraPos.y, this.originalCameraPos.z);
 
     this.scene = new THREE.Scene();
+
+    this.clock = new THREE.Clock();
+
+    this.clock.start();
 
     this.camera.lookAt(this.scene.position);
 
@@ -129,7 +134,27 @@ class Wave extends React.Component {
       this.container.current.parentElement.parentElement.appendChild(this.stats.domElement);
     }
 
-    window.addEventListener('resize', this.onWindowResize, false);
+    // window.addEventListener('resize', this.onWindowResize, false);
+    (function() {
+      const throttle = function(type, name, obj) {
+          obj = obj || window;
+          let running = false;
+          const func = function() {
+              if (running) { return; }
+              running = true;
+               requestAnimationFrame(function() {
+                  obj.dispatchEvent(new CustomEvent(name));
+                  running = false;
+              });
+          };
+          obj.addEventListener(type, func);
+      };
+
+      throttle("resize", "optimizedResize");
+    })();
+
+    window.addEventListener("optimizedResize", this.onWindowResize);
+
     document.addEventListener('mouseenter', () => {
       console.log('hovered??');
       this.hover = true;
