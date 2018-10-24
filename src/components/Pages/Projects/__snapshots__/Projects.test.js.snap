@@ -5,10 +5,10 @@ exports[`<Projects /> renders correctly 1`] = `
   className="container"
 >
   <h2
-    className="title glitch"
-    data-text="Projects"
+    className="glitch"
+    data-text="projects"
   >
-    Projects
+    projects
   </h2>
   <section
     className="projects"
@@ -24,12 +24,12 @@ exports[`<Projects /> renders correctly 1`] = `
         <div
           className="projectName"
         >
-          Main Course
+          main course
         </div>
         <div
           className="projectDesc"
         >
-          Restaurant App for the ages broham
+          restaurant app for the ages
         </div>
       </div>
     </a>
@@ -44,12 +44,12 @@ exports[`<Projects /> renders correctly 1`] = `
         <div
           className="projectName"
         >
-          LPM
+          lpm
         </div>
         <div
           className="projectDesc"
         >
-          Project manager assistant
+          project manager assistant
         </div>
       </div>
     </a>

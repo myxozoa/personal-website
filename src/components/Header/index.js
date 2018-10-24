@@ -12,11 +12,11 @@ class Header extends React.Component {
       <React.Fragment>
         <h1 className={styles.name}>
           <div className="glitch" data-text="Ronnie" style={{ '--offset': seconds() }}>
-            Ronnie
+            ronnie
           </div>
           <div className={styles.lastName}>
             <span className="glitch" data-text="Miksch" style={{ '--offset': seconds() }}>
-              Miksch
+              miksch
             </span>
             <div className={styles.periodContainer}>
               <div className={[styles.period, 'glitch'].join(' ')} data-text="." style={{ '--offset': seconds() }} />

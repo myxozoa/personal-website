@@ -8,7 +8,7 @@ class Projects extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        <h2 className={[styles.title, 'glitch'].join(' ')} data-text="Projects">Projects</h2>
+        <h2 className="glitch" data-text="projects">projects</h2>
         <section className={styles.projects}>
         {
           projects.map(project => (

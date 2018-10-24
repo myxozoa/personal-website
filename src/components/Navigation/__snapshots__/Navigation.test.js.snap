@@ -6,7 +6,7 @@ exports[`<Navigation /> renders correctly 1`] = `
 >
   <ForwardRef
     className="navLink glitch"
-    data-text="Home"
+    data-text="home"
     style={
       Object {
         "--offset": "1.5s",
@@ -14,11 +14,11 @@ exports[`<Navigation /> renders correctly 1`] = `
     }
     to="/"
   >
-    Home
+    home
   </ForwardRef>
   <ForwardRef
     className="navLink glitch"
-    data-text="Projects"
+    data-text="projects"
     style={
       Object {
         "--offset": "1.5s",
@@ -26,11 +26,11 @@ exports[`<Navigation /> renders correctly 1`] = `
     }
     to="/projects"
   >
-    Projects
+    projects
   </ForwardRef>
   <ForwardRef
     className="navLink glitch"
-    data-text="Contact"
+    data-text="contact"
     style={
       Object {
         "--offset": "1.5s5",
@@ -38,7 +38,7 @@ exports[`<Navigation /> renders correctly 1`] = `
     }
     to="/contact"
   >
-    Contact
+    contact
   </ForwardRef>
 </nav>
 `;

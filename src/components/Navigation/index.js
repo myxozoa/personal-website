@@ -9,9 +9,9 @@ class Navigation extends React.Component {
   render() {
     return (
       <nav className={styles.container}>
-        <Link className={['navLink', 'glitch'].join(' ')} data-text="Home" style={{ '--offset': seconds() }} to="/">Home</Link>
-        <Link className={['navLink', 'glitch'].join(' ')} data-text="Projects" style={{ '--offset': seconds() }} to="/projects">Projects</Link>
-        <Link className={['navLink', 'glitch'].join(' ')} data-text="Contact" style={{ '--offset': seconds() + 5 }} to="/contact">Contact</Link>
+        <Link className={['navLink', 'glitch'].join(' ')} data-text="home" style={{ '--offset': seconds() }} to="/">home</Link>
+        <Link className={['navLink', 'glitch'].join(' ')} data-text="projects" style={{ '--offset': seconds() }} to="/projects">projects</Link>
+        <Link className={['navLink', 'glitch'].join(' ')} data-text="contact" style={{ '--offset': seconds() + 5 }} to="/contact">contact</Link>
       </nav>
     );
   }

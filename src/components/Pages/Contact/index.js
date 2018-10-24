@@ -5,10 +5,11 @@ class Contact extends React.Component {
   render() {
     return (
       <div className={styles.container}>
+        <h2 className="glitch" data-text="contact">contact</h2>
         <div className={styles.box}>
-          <div>Ronnie Miksch</div>
-          <div>Software Developer</div>
-          <div>SF Bay Area</div>
+          <div>ronnie miksch</div>
+          <div>software developer</div>
+          <div>sf bay area</div>
           <div>510-356-7749</div>
           <div>mikschronnie@gmail.com</div>
           <div>https://github.com/myxozoa</div>

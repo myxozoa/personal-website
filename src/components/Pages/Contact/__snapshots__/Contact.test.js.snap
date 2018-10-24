@@ -4,17 +4,23 @@ exports[`<Contact /> renders correctly 1`] = `
 <div
   className="container"
 >
+  <h2
+    className="glitch"
+    data-text="contact"
+  >
+    contact
+  </h2>
   <div
     className="box"
   >
     <div>
-      Ronnie Miksch
+      ronnie miksch
     </div>
     <div>
-      Software Developer
+      software developer
     </div>
     <div>
-      SF Bay Area
+      sf bay area
     </div>
     <div>
       510-356-7749

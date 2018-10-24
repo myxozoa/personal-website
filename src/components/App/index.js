@@ -77,14 +77,10 @@ class App extends React.Component {
       }
     }
 
-    const transform =
-      'translateX(' +
-      transforms.translation.x +
-      'px) translateY(' +
-      transforms.translation.y +
-      'px) translateZ(' +
-      transforms.translation.z +
-      'px) rotateX(' +
+
+    const transform3d =
+      `translate3d(${transforms.translation.x}px,${transforms.translation.y}px,${transforms.translation.z}px)` +
+      ' rotateX(' +
       transforms.rotation.x +
       'deg) rotateY(' +
       transforms.rotation.y +
@@ -92,8 +88,9 @@ class App extends React.Component {
       transforms.rotation.z +
       'deg)';
 
-    this.header.current.style.WebkitTransform = transform;
-    this.content.current.style.WebkitTransform = transform;
+
+    this.header.current.style.transform = transform3d;
+    this.content.current.style.transform = transform3d;
   };
 
   mouseLeave = event => {
