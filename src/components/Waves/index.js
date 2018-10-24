@@ -54,7 +54,6 @@ class Wave extends React.Component {
     this.width = this.container.current.clientWidth;
     this.height = this.container.current.clientHeight;
 
-
     this.sizeMultiplier = 1 + this.height / 450;
 
     this.camera = new THREE.PerspectiveCamera(75, this.width / this.height, 1, 10000);
@@ -110,14 +109,12 @@ class Wave extends React.Component {
         colors.push(color.r, color.g, color.b);
 
         sizes.push(20);
-
       }
     }
 
     this.geometry.addAttribute('position', new THREE.Float32BufferAttribute(positions, 3).setDynamic(true));
     this.geometry.addAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
     this.geometry.addAttribute('size', new THREE.Float32BufferAttribute(sizes, 1).setDynamic(true));
-
 
     this.particleSystem = new THREE.Points(this.geometry, this.material);
     this.scene.add(this.particleSystem);
@@ -126,7 +123,6 @@ class Wave extends React.Component {
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.width, this.height);
     this.container.current.appendChild(this.renderer.domElement);
-
 
     if (this.debug) {
       this.stats = new Stats();
@@ -137,23 +133,25 @@ class Wave extends React.Component {
     // window.addEventListener('resize', this.onWindowResize, false);
     (function() {
       const throttle = function(type, name, obj) {
-          obj = obj || window;
-          let running = false;
-          const func = function() {
-              if (running) { return; }
-              running = true;
-               requestAnimationFrame(function() {
-                  obj.dispatchEvent(new CustomEvent(name));
-                  running = false;
-              });
-          };
-          obj.addEventListener(type, func);
+        obj = obj || window;
+        let running = false;
+        const func = function() {
+          if (running) {
+            return;
+          }
+          running = true;
+          requestAnimationFrame(function() {
+            obj.dispatchEvent(new CustomEvent(name));
+            running = false;
+          });
+        };
+        obj.addEventListener(type, func);
       };
 
-      throttle("resize", "optimizedResize");
+      throttle('resize', 'optimizedResize');
     })();
 
-    window.addEventListener("optimizedResize", this.onWindowResize);
+    window.addEventListener('optimizedResize', this.onWindowResize);
 
     document.addEventListener('mouseenter', () => {
       console.log('hovered??');
@@ -167,8 +165,6 @@ class Wave extends React.Component {
     });
 
     document.addEventListener('mousemove', this.onMouseMove);
-
-
   };
 
   onWindowResize = () => {
@@ -220,14 +216,18 @@ class Wave extends React.Component {
 
     let positionPointer = 0;
     let sizePointer = 0;
-    const time = Date.now() * 0.005;
+    const time = this.clock.getElapsedTime() * 5;
+
     const sizes = this.geometry.getAttribute('size').array;
     const positions = this.geometry.getAttribute('position').array;
 
     for (var ix = 0; ix < this.amountX; ix++) {
       for (var iy = 0; iy < this.amountY; iy++) {
-        positions[positionPointer + 1] = Math.sin((ix + time) * 0.3) * 50 + Math.sin((iy + time) * 0.5) * 50 + (this.jump ? Math.random() * this.jump * 150 : 0);
-        sizes[sizePointer] = Math.cos((ix + time) * 0.2) + (Math.sin((iy + time) * 0.5) + 1) * (Math.cos(ix * 100) + 6) * this.sizeMultiplier;
+        const deltaX = ix + time;
+        const deltaY = iy + time;
+        positions[positionPointer + 1] = Math.sin(deltaX * 0.3) * 50 + Math.sin(deltaY * 0.5) * 50 + (this.jump ? Math.random() * this.jump * 150 : 0);
+        const size = Math.cos(deltaX * 0.2) + (Math.sin(deltaY * 0.5) + 1) * (Math.cos(ix * 100) + 6) * this.sizeMultiplier;
+        sizes[sizePointer] = size < 0 ? 0 : size;
 
         sizePointer++;
         positionPointer += 3;
@@ -236,6 +236,10 @@ class Wave extends React.Component {
 
     if (this.jump > 0) {
       this.jump -= 0.05;
+    } else if (this.jump > 1) {
+      this.jump = 1;
+    } else if (this.jump < 0) {
+      this.jump = 0;
     }
 
     this.geometry.getAttribute('size').needsUpdate = true;
@@ -248,7 +252,7 @@ class Wave extends React.Component {
       <div className={styles.container}>
         <div className={styles.root} ref={this.container} />
       </div>
-    )
+    );
   }
 }
 
