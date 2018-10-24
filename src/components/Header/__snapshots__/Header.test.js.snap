@@ -7,7 +7,7 @@ exports[`<Header /> renders correctly 1`] = `
   >
     <div
       className="glitch"
-      data-text="Ronnie"
+      data-text="ronnie"
       style={
         Object {
           "--offset": "1.5s",
@@ -21,7 +21,7 @@ exports[`<Header /> renders correctly 1`] = `
     >
       <span
         className="glitch"
-        data-text="Miksch"
+        data-text="miksch"
         style={
           Object {
             "--offset": "1.5s",
