@@ -134,6 +134,9 @@ class App extends React.Component {
         onMouseMove={this.mouseMove}
         onMouseLeave={this.mouseLeave}
         onMouseEnter={this.mouseEnter}
+        onTouchMove={this.mouseMove}
+        onTouchEnd={this.mouseLeave}
+        onTouchStart={this.mouseEnter}
       >
         <header ref={this.header} className={styles.header}>
           <Header />

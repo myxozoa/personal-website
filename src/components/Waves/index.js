@@ -154,7 +154,6 @@ class Wave extends React.Component {
     window.addEventListener('optimizedResize', this.onWindowResize);
 
     document.addEventListener('mouseenter', () => {
-      console.log('hovered??');
       this.hover = true;
     });
     document.addEventListener('mouseout', () => {
@@ -164,7 +163,17 @@ class Wave extends React.Component {
       this.jump = 1;
     });
 
+
+    document.addEventListener('touchstart', () => {
+      this.jump = 1;
+      this.hover = true;
+    });
+    document.addEventListener('touchend', () => {
+      this.hover = false;
+    });
+
     document.addEventListener('mousemove', this.onMouseMove);
+    document.addEventListener('touchmove', this.onMouseMove);
   };
 
   onWindowResize = () => {

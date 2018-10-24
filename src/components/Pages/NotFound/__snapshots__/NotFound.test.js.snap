@@ -6,7 +6,7 @@ exports[`<NotFound /> renders correctly 1`] = `
 >
   <h2
     className="glitch"
-    data-text="Not_Found"
+    data-text="not_found"
   >
     not_found
   </h2>
