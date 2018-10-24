@@ -8,6 +8,8 @@ import fragShader from './particle.frag';
 import particle from '../../assets/particle.png';
 import Stats from '../../stats.min';
 
+import { getMousePos } from '../../helpers/getMousePos';
+
 class Wave extends React.Component {
   constructor(props) {
     super(props);
@@ -44,8 +46,9 @@ class Wave extends React.Component {
 
   onMouseMove = event => {
     this.hover = true;
-    this.mouseX = -(event.clientX - this.width / 2) / 2;
-    this.mouseY = -(event.clientY - this.height / 2) * 2;
+    const mousePos = getMousePos(event);
+    this.mouseX = -(mousePos.x - this.width / 2) / 2;
+    this.mouseY = -(mousePos.y - this.height / 2) * 2;
   };
 
   init = () => {
@@ -165,7 +168,6 @@ class Wave extends React.Component {
 
 
     document.addEventListener('touchstart', () => {
-      this.jump = 1;
       this.hover = true;
     });
     document.addEventListener('touchend', () => {

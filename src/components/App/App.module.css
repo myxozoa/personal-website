@@ -3,9 +3,7 @@
   flex-direction: column;
   height: 100%;
   perspective: 4000px;
-  -webkit-perspective: 4000px;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  /* transform-style: preserve-3d; */
 }
 
 .header {
@@ -14,7 +12,7 @@
   font-size: 2rem;
   letter-spacing: 1.5px;
   color: hsl(0, 0%, 98%);
-  transform: translate3d(0,0,0);
+  transform: translate3d(0,0,30);
   z-index: 10;
 }
 

@@ -12,19 +12,7 @@ import Projects from '../Pages/Projects';
 import Contact from '../Pages/Contact';
 import NotFound from '../Pages/NotFound';
 
-function getMousePos(e) {
-  var posx = 0,
-    posy = 0;
-  // if (!e) var e = window.event;
-  if (e.pageX || e.pageY) {
-    posx = e.pageX;
-    posy = e.pageY;
-  } else if (e.clientX || e.clientY) {
-    posx = e.clientX;
-    posy = e.clientY;
-  }
-  return { x: posx, y: posy };
-}
+import { getMousePos } from '../../helpers/getMousePos';
 
 class App extends React.Component {
   constructor(props) {
@@ -47,6 +35,7 @@ class App extends React.Component {
   };
 
   mouseMove = event => {
+    // event.preventDefault();
     const mousePos = getMousePos(event);
     const relMousePos = { x: mousePos.x - this.bounds.left, y: mousePos.y - this.bounds.top };
 
@@ -60,7 +49,7 @@ class App extends React.Component {
       translation: {
         x: ((config.translation.x[1] - config.translation.x[0]) / this.bounds.width) * relMousePos.x + config.translation.x[0],
         y: ((config.translation.y[1] - config.translation.y[0]) / this.bounds.height) * relMousePos.y + config.translation.y[0],
-        z: 10,
+        z: 30,
       },
       rotation: {
         x: ((config.rotation.x[1] - config.rotation.x[0]) / this.bounds.height) * relMousePos.y + config.rotation.x[0],
@@ -96,15 +85,12 @@ class App extends React.Component {
   mouseLeave = event => {
     anime({
       targets: this.header.current,
-      duration: 1200,
+      duration: 1500,
       easing: 'easeOutElastic',
-      elasticity: 600,
-      scaleX: 1,
-      scaleY: 1,
-      scaleZ: 1,
+      elasticity: 400,
       translateX: 0,
       translateY: 0,
-      translateZ: 0,
+      translateZ: [30, 30],
       rotateX: 0,
       rotateY: 0,
       rotateZ: 0,
@@ -112,15 +98,12 @@ class App extends React.Component {
 
     anime({
       targets: this.content.current,
-      duration: 1200,
+      duration: 1500,
       easing: 'easeOutElastic',
-      elasticity: 600,
-      scaleX: 1,
-      scaleY: 1,
-      scaleZ: 1,
+      elasticity: 400,
       translateX: 0,
       translateY: 0,
-      translateZ: 0,
+      translateZ: [30, 30],
       rotateX: 0,
       rotateY: 0,
       rotateZ: 0,
