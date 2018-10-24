@@ -60,12 +60,12 @@ class App extends React.Component {
       translation: {
         x: ((config.translation.x[1] - config.translation.x[0]) / this.bounds.width) * relMousePos.x + config.translation.x[0],
         y: ((config.translation.y[1] - config.translation.y[0]) / this.bounds.height) * relMousePos.y + config.translation.y[0],
-        z: ((config.translation.z[1] - config.translation.z[0]) / this.bounds.height) * relMousePos.y + config.translation.z[0],
+        z: 10,
       },
       rotation: {
         x: ((config.rotation.x[1] - config.rotation.x[0]) / this.bounds.height) * relMousePos.y + config.rotation.x[0],
         y: ((config.rotation.y[1] - config.rotation.y[0]) / this.bounds.width) * relMousePos.x + config.rotation.y[0],
-        z: ((config.rotation.z[1] - config.rotation.z[0]) / this.bounds.width) * relMousePos.x + config.rotation.z[0],
+        z: 0,
       },
     };
 
