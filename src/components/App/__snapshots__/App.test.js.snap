@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders correctly 1`] = `
+<div
+  className="app"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+>
+  <header
+    className="header"
+  >
+    <Header />
+  </header>
+  <div
+    className="content"
+  >
+    <Router>
+      <Landing
+        path="/"
+      />
+      <Projects
+        path="/projects"
+      />
+      <Contact
+        path="/contact"
+      />
+      <Landing
+        default={true}
+      />
+    </Router>
+  </div>
+  <Wave
+    amountX="120"
+    amountY="30"
+    height="100"
+    separation="50"
+    width="100"
+  />
+</div>
+`;

@@ -4,8 +4,8 @@ import anime from 'animejs';
 
 import styles from './App.module.css';
 
-import Navigation from '../Navigation';
 import Waves from '../Waves';
+import Header from '../Header';
 
 import Landing from '../Pages/Landing';
 import Projects from '../Pages/Projects';
@@ -20,8 +20,8 @@ function getMousePos(e) {
     posx = e.pageX;
     posy = e.pageY;
   } else if (e.clientX || e.clientY) {
-    posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-    posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+    posx = e.clientX;
+    posy = e.clientY;
   }
   return { x: posx, y: posy };
 }
@@ -38,7 +38,7 @@ class App extends React.Component {
   componentDidMount() {
     this.bounds = document.body.getBoundingClientRect();
 
-    window.addEventListener('resize', () => this.bounds = document.body.getBoundingClientRect());
+    window.addEventListener('resize', () => (this.bounds = document.body.getBoundingClientRect()));
   }
 
   mouseEnter = () => {
@@ -48,8 +48,7 @@ class App extends React.Component {
 
   mouseMove = event => {
     const mousePos = getMousePos(event);
-    const docScrolls = { left: document.body.scrollLeft + document.documentElement.scrollLeft, top: document.body.scrollTop + document.documentElement.scrollTop };
-    const relMousePos = { x: mousePos.x - this.bounds.left - docScrolls.left, y: mousePos.y - this.bounds.top - docScrolls.top };
+    const relMousePos = { x: mousePos.x - this.bounds.left, y: mousePos.y - this.bounds.top };
 
     const config = {
       translation: { x: [5, -5], y: [5, -5], z: [0, 0] },
@@ -78,14 +77,10 @@ class App extends React.Component {
       }
     }
 
-    const transform =
-      'translateX(' +
-      transforms.translation.x +
-      'px) translateY(' +
-      transforms.translation.y +
-      'px) translateZ(' +
-      transforms.translation.z +
-      'px) rotateX(' +
+
+    const transform3d =
+      `translate3d(${transforms.translation.x}px,${transforms.translation.y}px,${transforms.translation.z}px)` +
+      ' rotateX(' +
       transforms.rotation.x +
       'deg) rotateY(' +
       transforms.rotation.y +
@@ -93,8 +88,9 @@ class App extends React.Component {
       transforms.rotation.z +
       'deg)';
 
-    this.header.current.style.WebkitTransform = transform;
-    this.content.current.style.WebkitTransform = transform;
+
+    this.header.current.style.transform = transform3d;
+    this.content.current.style.transform = transform3d;
   };
 
   mouseLeave = event => {
@@ -133,23 +129,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.app} onMouseMove={this.mouseMove} onMouseLeave={this.mouseLeave} onMouseEnter={this.mouseEnter}>
+      <div
+        className={styles.app}
+        onMouseMove={this.mouseMove}
+        onMouseLeave={this.mouseLeave}
+        onMouseEnter={this.mouseEnter}
+      >
         <header ref={this.header} className={styles.header}>
-          <h1 className={styles.name}>
-            <div className="glitch" data-text="Ronnie" style={{ '--offset': `${Math.random() * 3}s` }}>
-              Ronnie
-            </div>
-            <div className={styles.lastName}>
-              <span className="glitch" data-text="Miksch" style={{ '--offset': `${Math.random() * 3}s` }}>
-                Miksch
-              </span>
-              <div className={styles.periodContainer}>
-                <div className={[styles.period, 'glitch'].join(' ')} data-text="." style={{ '--offset': `${Math.random() * 3}s` }} />
-              </div>
-            </div>
-          </h1>
-
-          <Navigation />
+          <Header />
         </header>
 
         <div className={styles.content} ref={this.content}>

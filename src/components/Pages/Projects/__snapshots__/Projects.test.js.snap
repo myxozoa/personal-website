@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Projects /> renders correctly 1`] = `
+<div
+  className="container"
+>
+  <h2
+    className="glitch"
+    data-text="projects"
+  >
+    projects
+  </h2>
+  <section
+    className="projects"
+  >
+    <a
+      className="link"
+      href="https://www.maincourse.app"
+      key="fdsh09978"
+    >
+      <div
+        className="project"
+      >
+        <div
+          className="projectName"
+        >
+          main course
+        </div>
+        <div
+          className="projectDesc"
+        >
+          restaurant app for the ages
+        </div>
+      </div>
+    </a>
+    <a
+      className="link"
+      href="https://github.com/myxozoa/LPM"
+      key="dhans9770"
+    >
+      <div
+        className="project"
+      >
+        <div
+          className="projectName"
+        >
+          lpm
+        </div>
+        <div
+          className="projectDesc"
+        >
+          project manager assistant
+        </div>
+      </div>
+    </a>
+  </section>
+</div>
+`;

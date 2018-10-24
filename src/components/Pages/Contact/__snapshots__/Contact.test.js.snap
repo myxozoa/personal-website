@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Contact /> renders correctly 1`] = `
+<div
+  className="container"
+>
+  <h2
+    className="glitch"
+    data-text="contact"
+  >
+    contact
+  </h2>
+  <div
+    className="box"
+  >
+    <div>
+      ronnie miksch
+    </div>
+    <div>
+      software developer
+    </div>
+    <div>
+      sf bay area
+    </div>
+    <div>
+      510-356-7749
+    </div>
+    <div>
+      mikschronnie@gmail.com
+    </div>
+    <div>
+      https://github.com/myxozoa
+    </div>
+  </div>
+</div>
+`;

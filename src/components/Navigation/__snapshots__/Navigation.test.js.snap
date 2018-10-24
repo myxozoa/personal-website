@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation /> renders correctly 1`] = `
+<nav
+  className="container"
+>
+  <ForwardRef
+    className="navLink glitch"
+    data-text="home"
+    style={
+      Object {
+        "--offset": "1.5s",
+      }
+    }
+    to="/"
+  >
+    home
+  </ForwardRef>
+  <ForwardRef
+    className="navLink glitch"
+    data-text="projects"
+    style={
+      Object {
+        "--offset": "1.5s",
+      }
+    }
+    to="/projects"
+  >
+    projects
+  </ForwardRef>
+  <ForwardRef
+    className="navLink glitch"
+    data-text="contact"
+    style={
+      Object {
+        "--offset": "1.5s5",
+      }
+    }
+    to="/contact"
+  >
+    contact
+  </ForwardRef>
+</nav>
+`;

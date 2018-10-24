@@ -141,6 +141,11 @@ table {
   border-spacing: 0;
 }
 
+h2 {
+  margin-bottom: 50px;
+  font-size: 2rem;
+}
+
 /* hack because reach router renders a div that breaks flexbox */
 div[role='group'][tabindex] {
   flex: 1;
