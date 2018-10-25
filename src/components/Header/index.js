@@ -39,7 +39,7 @@ class Header extends React.Component {
           <div />
           <div />
         </div>
-        <div className={[show ? styles.show : styles.hide, location.pathname === '/' ? styles.noBgdHomepage : styles.normal].join(' ')} onClick={this.toggleMenu}>
+        <div className={[show ? styles.show : styles.hide, location.pathname === '/' ? styles.noBgdHomepage : styles.normal, styles.header].join(' ')} onClick={this.toggleMenu}>
           <h1 className={styles.name}>
             <div className="glitch" data-text="ronnie" style={{ '--offset': seconds() }}>
               ronnie

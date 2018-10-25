@@ -11,7 +11,7 @@ exports[`<Header /> renders correctly 1`] = `
     <div />
   </div>
   <div
-    className="show"
+    className="show normal header"
     onClick={[Function]}
   >
     <h1

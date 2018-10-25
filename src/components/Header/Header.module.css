@@ -65,18 +65,22 @@
   display: none;
 }
 
+.header {
+  display: none;
+  background: hsl(0, 0%, 2%);
+}
+
 .hide {
-  /* display: none; */
+  display: none;
   opacity: 0;
-  transition: opacity 0.2s ease-in-out;
   pointer-events: none;
+  animation: fade-out 0.3s ease-in-out 0s 1;
 }
 
 .show {
-  /* display: initial; */
+  display: block;
   opacity: 1;
-  background: hsl(0, 0%, 2%);
-  transition: opacity 0.2s ease-in-out;
+  animation: fade-in 0.3s ease-in-out 0s 1;
   padding-bottom: 10px;
 }
 
@@ -89,7 +93,7 @@
     display: none;
   }
 
-  .show {
+  .header {
     background: none;
   }
 
@@ -97,5 +101,28 @@
     opacity: 1;
     display: initial;
     pointer-events: unset;
+    animation: none;
+  }
+
+  .show {
+    animation: none;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
