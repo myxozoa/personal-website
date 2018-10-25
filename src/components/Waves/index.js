@@ -165,17 +165,17 @@ class Wave extends React.Component {
     document.addEventListener('mousedown', () => {
       this.jump = 1;
     });
-
-
-    document.addEventListener('touchstart', () => {
-      this.hover = true;
-    });
-    document.addEventListener('touchend', () => {
-      this.hover = false;
-    });
-
     document.addEventListener('mousemove', this.onMouseMove);
-    document.addEventListener('touchmove', this.onMouseMove);
+
+
+    // document.addEventListener('touchstart', () => {
+    //   this.hover = true;
+    // });
+    // document.addEventListener('touchend', () => {
+    //   this.hover = false;
+    // });
+
+    // document.addEventListener('touchmove', this.onMouseMove);
   };
 
   onWindowResize = () => {

@@ -6,14 +6,13 @@ exports[`<App /> renders correctly 1`] = `
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
   onMouseMove={[Function]}
-  onTouchEnd={[Function]}
-  onTouchMove={[Function]}
-  onTouchStart={[Function]}
 >
   <header
     className="header"
   >
-    <Header />
+    <Location>
+      <Component />
+    </Location>
   </header>
   <div
     className="content"

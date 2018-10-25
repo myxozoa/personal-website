@@ -9,3 +9,11 @@
   pointer-events: auto;
   padding-left: 10px;
 }
+
+.hide {
+  pointer-events: none;
+}
+
+.show {
+  pointer-events: unset;
+}
