@@ -3,13 +3,8 @@
 exports[`<Header /> renders correctly 1`] = `
 <Fragment>
   <div
-    className="closeButton button"
+    className="normal closeButton button"
     onClick={[Function]}
-    style={
-      Object {
-        "display": "initial",
-      }
-    }
   >
     <div />
     <div />

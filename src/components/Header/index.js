@@ -34,7 +34,7 @@ class Header extends React.Component {
     const { location } = this.props;
     return (
       <React.Fragment>
-        <div style={{ display: location.pathname === '/' ? 'none' : 'initial' }} className={[show ? styles.closeButton : styles.openButton, styles.button].join(' ')} onClick={this.toggleMenu}>
+        <div className={[location.pathname === '/' ? styles.homepage : styles.normal, show ? styles.closeButton : styles.openButton, styles.button].join(' ')} onClick={this.toggleMenu}>
           <div />
           <div />
           <div />
