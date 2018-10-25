@@ -13,7 +13,9 @@ exports[`<App /> renders correctly 1`] = `
   <header
     className="header"
   >
-    <Header />
+    <Location>
+      <Component />
+    </Location>
   </header>
   <div
     className="content"

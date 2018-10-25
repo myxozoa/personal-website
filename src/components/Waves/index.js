@@ -165,6 +165,7 @@ class Wave extends React.Component {
     document.addEventListener('mousedown', () => {
       this.jump = 1;
     });
+    document.addEventListener('mousemove', this.onMouseMove);
 
 
     document.addEventListener('touchstart', () => {
@@ -174,7 +175,6 @@ class Wave extends React.Component {
       this.hover = false;
     });
 
-    document.addEventListener('mousemove', this.onMouseMove);
     document.addEventListener('touchmove', this.onMouseMove);
   };
 

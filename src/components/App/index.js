@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router } from '@reach/router';
+import { Router, Location } from '@reach/router';
 import anime from 'animejs';
 
 import styles from './App.module.css';
@@ -85,7 +85,7 @@ class App extends React.Component {
   mouseLeave = event => {
     anime({
       targets: this.header.current,
-      duration: 1500,
+      duration: 1200,
       easing: 'easeOutElastic',
       elasticity: 400,
       translateX: 0,
@@ -98,7 +98,7 @@ class App extends React.Component {
 
     anime({
       targets: this.content.current,
-      duration: 1500,
+      duration: 1200,
       easing: 'easeOutElastic',
       elasticity: 400,
       translateX: 0,
@@ -122,7 +122,11 @@ class App extends React.Component {
         onTouchStart={this.mouseEnter}
       >
         <header ref={this.header} className={styles.header}>
-          <Header />
+          <Location>
+            {({ location }) => (
+              <Header location={location}/>
+            )}
+          </Location>
         </header>
 
         <div className={styles.content} ref={this.content}>

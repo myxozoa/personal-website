@@ -2,49 +2,69 @@
 
 exports[`<Header /> renders correctly 1`] = `
 <Fragment>
-  <h1
-    className="name"
-  >
-    <div
-      className="glitch"
-      data-text="ronnie"
-      style={
-        Object {
-          "--offset": "1.5s",
-        }
+  <div
+    className="closeButton button"
+    onClick={[Function]}
+    style={
+      Object {
+        "display": "initial",
       }
+    }
+  >
+    <div />
+    <div />
+    <div />
+  </div>
+  <div
+    className="show"
+    onClick={[Function]}
+  >
+    <h1
+      className="name"
     >
-      ronnie
-    </div>
-    <div
-      className="lastName"
-    >
-      <span
+      <div
         className="glitch"
-        data-text="miksch"
+        data-text="ronnie"
         style={
           Object {
             "--offset": "1.5s",
           }
         }
       >
-        miksch
-      </span>
+        ronnie
+      </div>
       <div
-        className="periodContainer"
+        className="lastName"
       >
-        <div
-          className="period glitch"
-          data-text="."
+        <span
+          className="glitch"
+          data-text="miksch"
           style={
             Object {
               "--offset": "1.5s",
             }
           }
-        />
+        >
+          miksch
+        </span>
+        <div
+          className="periodContainer"
+        >
+          <div
+            className="period glitch"
+            data-text="."
+            style={
+              Object {
+                "--offset": "1.5s",
+              }
+            }
+          />
+        </div>
       </div>
-    </div>
-  </h1>
-  <Navigation />
+    </h1>
+    <Navigation
+      show={true}
+    />
+  </div>
 </Fragment>
 `;

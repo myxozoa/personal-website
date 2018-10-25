@@ -2,7 +2,7 @@
 
 exports[`<Navigation /> renders correctly 1`] = `
 <nav
-  className="container"
+  className="container show"
 >
   <ForwardRef
     className="navLink glitch"
