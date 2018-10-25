@@ -77,6 +77,11 @@
   opacity: 1;
   background: hsl(0, 0%, 2%);
   transition: opacity 0.2s ease-in-out;
+  padding-bottom: 10px;
+}
+
+.noBgdHomepage {
+  background: none;
 }
 
 @media (min-width: 650px) {
@@ -84,7 +89,13 @@
     display: none;
   }
 
+  .show {
+    background: none;
+  }
+
   .hide {
+    opacity: 1;
     display: initial;
+    pointer-events: unset;
   }
 }
